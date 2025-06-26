@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/vscode-extension",
+  "name": "ai-code-assistant-vscode-extension",
+  "displayName": "AI Code Assistant",
+  "version": "1.0.0",
+  "publisher": "juned-khan",
+  "description": "VS Code extension with AI-powered chat assistant",
+  "main": "dist/extension.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && npm run start",
+    "build": "tsc",
+    "start": "node dist/extension.js",
+    "dev:webview": "npm run dev --prefix webview-ui",
+    "build:webview": "npm run build --prefix webview-ui"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onCommand:extension.openChat"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openChat",
+        "title": "Open AI Code Chat"
+      }
+    ]
+  },
+  "keywords": [],
+  "author": "Juned Khan",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.19.1",
+    "@types/vscode": "^1.101.0",
+    "nodemon": "^3.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^16.5.0",
+    "openai": "^4.24.1"
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { vscode } from "./vscode";
 import { MessageFromExtension } from "./types";
-import { vscode } from "./vscode"; // ✅ Safe import
 
 function App() {
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);

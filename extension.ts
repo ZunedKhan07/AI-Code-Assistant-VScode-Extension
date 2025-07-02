@@ -50,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
     });
 
-    // ✅ Load React WebView Manually
+    // ✅ Load React WebView
     const distPath = path.join(context.extensionPath, "webview-ui", "dist");
     const assetsPath = path.join(distPath, "assets");
 
@@ -65,7 +65,7 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.Uri.file(path.join(assetsPath, cssFile!))
     );
 
-    // ✅ Inject HTML manually
+    // ✅ Inject HTML (without acquireVsCodeApi)
     panel.webview.html = `
       <!DOCTYPE html>
       <html lang="en">
@@ -77,9 +77,6 @@ export function activate(context: vscode.ExtensionContext) {
         </head>
         <body>
           <div id="root"></div>
-          <script>
-            const vscode = acquireVsCodeApi();
-          </script>
           <script type="module" src="${scriptUri}"></script>
         </body>
       </html>

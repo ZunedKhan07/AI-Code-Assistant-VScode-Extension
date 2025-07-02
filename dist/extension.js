@@ -44,7 +44,7 @@ export function activate(context) {
                 }
             }
         }));
-        // ✅ Load React WebView Manually
+        // ✅ Load React WebView
         const distPath = path.join(context.extensionPath, "webview-ui", "dist");
         const assetsPath = path.join(distPath, "assets");
         const files = fs.readdirSync(assetsPath);
@@ -52,7 +52,7 @@ export function activate(context) {
         const cssFile = files.find(f => f.endsWith(".css"));
         const scriptUri = panel.webview.asWebviewUri(vscode.Uri.file(path.join(assetsPath, jsFile)));
         const styleUri = panel.webview.asWebviewUri(vscode.Uri.file(path.join(assetsPath, cssFile)));
-        // ✅ Inject HTML manually
+        // ✅ Inject HTML (without acquireVsCodeApi)
         panel.webview.html = `
       <!DOCTYPE html>
       <html lang="en">
@@ -64,9 +64,6 @@ export function activate(context) {
         </head>
         <body>
           <div id="root"></div>
-          <script>
-            const vscode = acquireVsCodeApi();
-          </script>
           <script type="module" src="${scriptUri}"></script>
         </body>
       </html>

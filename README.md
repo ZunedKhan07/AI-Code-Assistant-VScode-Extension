@@ -16,9 +16,6 @@ This is a fully functional **Visual Studio Code extension** built as part of an 
 - 🛠 **Context-Aware Responses**  
   Sends file content along with user prompts for smarter answers.
 
-## 📸 Demo
-
-> 💡 _Insert a link to your demo video (Google Drive, Loom, or YouTube) here._
 
 ## 🚀 Tech Stack
 
@@ -28,6 +25,7 @@ This is a fully functional **Visual Studio Code extension** built as part of an 
 | Chat UI      | React + Vite             |
 | AI Backend   | Gemini (Google AI Model) |
 | APIs Used    | VS Code Extension & WebView API |
+
 
 ## 📁 Project Structure
 
@@ -51,18 +49,14 @@ ai-code-assistant-vscode-extension/
    npm install
    cd webview-ui && npm install
 
-Build frontend
+Build frontend:
 
-bash
-Copy
-Edit
 npm run build:webview
-Build backend
 
-bash
-Copy
-Edit
+Build backend:
+
 npm run build
+
 Open in VS Code → Run Extension
 Press F5 to launch the extension in a new VS Code window.
 
@@ -71,10 +65,5 @@ Use Ctrl+Shift+P → “Open AI Code Chat”
 
 Type any coding question or use @filename syntax to attach a file from workspace
 
-📌 Assignment Info
-This project was developed as a submission for an internship assignment provided by CodingJr via Internshala, requiring an AI-based assistant with file awareness in a VS Code extension.
-
-📧 Submission
-Submitted to: vikas@codingjr.online
-GitHub: https://github.com/your-username
-Phone: +91-XXXXXXXXXX
+GitHub: https://github.com/ZunedKhan07
+Phone: +91-7023400518
